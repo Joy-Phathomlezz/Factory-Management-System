@@ -1,51 +1,48 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+//Home Page
 
-// Admin
-import StoreAdminDashboard from "./componant/Admin/StoreAdminDashboard.jsx";
-import AdminStoreDetails from "./componant/Admin/AdminStoreDetails.jsx";
-import InventoryTable from "./componant/Admin/InventoryTable.jsx";
-import InventoryDetails from "./componant/Admin/InventoryDetails.jsx";
-import InvantoryAnalaticDashboard from "./componant/Admin/InvantoryAnalaticDashboard.jsx";
-import RawMaterialHistory from "./componant/Admin/RawMaterialHistory.jsx";
-import ItemRequest from "./componant/Admin/ItemRequest.jsx";
+import HomePage from "./components/Home/Home.js";
+import LoginPage from './components/Home/Auth/LoginPage.js';
+import SignupPage from './components/Home/Auth/SignupPage';
+
+//sales
+
+import Sales from "./components/Sales/Sales.js";
+import Purchase from "./components/dept_purchase/Purchase.js";
+import Quality from "./components/dept_quality/Quality.js";
+import Store from "./components/store/Store.js";
+import Production from "./components/dept_production/Production.js";
+
+
+import StoreAdminDashboard from "./components/Admin/StoreAdminDashboard.jsx";
+import AdminStoreDetails from "./components/Admin/AdminStoreDetails.jsx";
+import InventoryTable from "./components/Admin/InventoryTable.jsx";
+import InventoryDetails from "./components/Admin/InventoryDetails.jsx";
+import InvantoryAnalaticDashboard from "./components/Admin/InvantoryAnalaticDashboard.jsx";
+import RawMaterialHistory from "./components/Admin/RawMaterialHistory.jsx";
+import ItemRequest from "./components/Admin/ItemRequest.jsx";
 
 // Dashboards & Utilities
-import ExcelTemplate from "./componant/excellsheet/ExcelTemplate.js";
-import RoleSelector from "./componant/RoleSelector.js";
-import RegistrarDashboard from "./componant/RegistrarDashboard.js";
-import ApproverDashboard from "./componant/ApproverDashboard.js";
-import ReadyForDispatch from "./componant/Ready.js";
+import ExcelTemplate from "./components/excellsheet/ExcelTemplate.js";
+import RoleSelector from "./components/RoleSelector.js";
+import RegistrarDashboard from "./components/RegistrarDashboard.js";
+import ApproverDashboard from "./components/ApproverDashboard.js";
+import ReadyForDispatch from "./components/Ready.js";
 import BillOfMaterials from "./BillOfMaterials.js";
-import HomePage from "./Home.js";
+
 
 // Production
-import ProductionDashboard from "./componant/dept_production/production_dashboard.js";
+import ProductionDashboard from "./components/dept_production/production_dashboard.js";
 
 // Purchase
-import PurchaseDashboard from "./componant/dept_purchase/purchase_dashboard.js";
-import OrdersPage from "./componant/dept_purchase/orders.js";
-import VendorsPage from "./componant/dept_purchase/purchase_vendors.js";
-import InventoryPage from "./componant/dept_purchase/purchase_inventory.js";
-import ReportsPage from "./componant/dept_purchase/purchase_report.js";
-import SettingsPage from "./purchase_settings.js";
-import HomeDashboard from "./componant/dept_purchase/purchase_home.js";
 
-// Quality
-import QualityDashboard from "./componant/dept_quality/quality_dashboard.js";
-import RawMaterialsPage from "./componant/dept_quality/quality_rawmaterial.js";
-import InProcessDashboard from "./componant/dept_quality/in-process/inprocess_dashboard.js";
-import PDIPage from "./componant/dept_quality/pdi_page.js";
-import QualityReportsPage from "./componant/dept_quality/quality_reports.js";
-import SalesDashboard from "./componant/Sales/sales_dashboard.js";
-import SalesInventoryPage from "./componant/Sales/sales_inventory.js";
-import SalesReportPage from "./componant/Sales/sales_report.js";
-import SalesHistoryPage from "./componant/Sales/sales_history.js";
-import InvoicesPage from "./componant/Sales/sales_invoices.js";
-import CustomersPage from "./componant/Sales/sales_customers.js";
-import StoreDashboard from "./componant/store/store_dashboard.js";
-import StoreRequirements from "./componant/store/store_requirements.js";
-import AssignedItems from "./componant/store/store_assigned.js";
+
+
+
+
+
+
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -62,39 +59,18 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/production_dashboard" element={<ProductionDashboard />} />
+        <Route path="/" element={<HomePage />} >
+        <Route path="login" element={<LoginPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        </Route>
+        <Route path="/production/*" element={<Production />} />
+        <Route path="/sales/*" element={<Sales />} />
+        <Route path="/purchase/*" element={<Purchase/>} />
+        <Route path="/quality/*" element={<Quality />}/>
+        <Route path="/store/*" element={<Store />}/>
+      
    
 
-        <Route path="/purchase_dashboard" element={<PurchaseDashboard />}>
-          <Route path="purchase_orders" element={<OrdersPage />} />
-          <Route path="purchase_home" element={<HomeDashboard />} />
-          <Route path="purchase_vendors" element={<VendorsPage />} />
-          <Route path="purchase_inventory" element={<InventoryPage />} />
-          <Route path="purchase_reports" element={<ReportsPage />} />
-          <Route path="purchase_settings" element={<SettingsPage />} />
-        </Route>
-
-        <Route path="/quality_dashboard" element={<QualityDashboard />}>
-          <Route path="quality_raw" element={<RawMaterialsPage />} />
-          <Route path="inprocess_dashboard" element={<InProcessDashboard />} />
-          <Route path="pdipage" element={<PDIPage />} />
-          <Route path="quality_reports" element={<QualityReportsPage/>} />
-        </Route>
-     <Route path="/sales_dashboard" element={<SalesDashboard />} >
-     <Route path="sales_inventory" element={<SalesInventoryPage />}/ >
-     <Route path="sales_report" element={<SalesReportPage />}/ >
-     <Route path="sales_history" element={<SalesHistoryPage />}/ >
-     <Route path="sales_invoices" element={<InvoicesPage />}/ >
-     <Route path="sales_customers" element={<CustomersPage />}/ >
-     </Route>
-<Route path="/store_dashboard" element={<StoreDashboard />} >
-<Route path="store_requirements" element={<StoreRequirements/>} />
-
-<Route path="bill_of_materials" element={<BillOfMaterials/>} />
-<Route path="assigned_items" element={<AssignedItems/>} />
-
-</Route>
 
 
 

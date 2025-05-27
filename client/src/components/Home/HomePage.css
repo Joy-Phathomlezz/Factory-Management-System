@@ -1,0 +1,68 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+body, .homepage {
+  font-family: 'Satoshi', sans-serif;
+  color: #fff; /* Make all text white globally */
+}
+
+.homepage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #14532d 0%, #1c4532 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.homepage__card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px 0 rgba(20,83,45,0.65), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+  background: linear-gradient(120deg, #1c4532 60%, #236e4a 100%);
+  border: 2px solid #19c37d;
+  color: #fff; /* Ensure all card text is white */
+}
+
+.homepage__card-body {
+  padding: 48px;
+  text-align: center;
+  color: #fff; /* Ensure all inner card text is white */
+}
+
+.homepage__title {
+  color: #fff;
+  margin-bottom: 44px;
+  font-family: 'Satoshi', sans-serif;
+  /* Removed text-shadow */
+}
+.homepage__title,
+.homepage__title .ant-typography {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+.homepage__button {
+  background: linear-gradient(145deg, #236e4a 80%, #14532d 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  border: 2.5px solid #19c37d;
+  box-shadow: 0 6px 18px 0 #0e291d, 0 2px 8px 0 #0005, 0 1.5px 0px 0 #19c37d;
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
+  letter-spacing: 1px;
+}
+
+.homepage__button:hover, .homepage__button:focus {
+  background: linear-gradient(145deg, #19c37d 80%, #236e4a 100%);
+  color: #fff; /* Keep text white on hover */
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 32px 0 #19c37d88, 0 2px 8px 0 #0008;
+}
+
+/* Responsive card padding for small screens */
+@media (max-width: 600px) {
+  .homepage__card-body {
+    padding: 24px;
+  }
+}

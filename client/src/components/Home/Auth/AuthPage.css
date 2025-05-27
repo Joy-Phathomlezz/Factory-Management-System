@@ -1,0 +1,85 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+body, .auth-page {
+  font-family: 'Satoshi', sans-serif;
+  color: #fff;
+}
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #14532d 0%, #1c4532 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #1c4532 60%, #236e4a 100%);
+  border: 2px solid #19c37d;
+  padding: 36px 28px;
+  color: #fff;
+  box-shadow: 0 6px 18px 0 rgba(20,83,45,0.25);
+}
+
+.auth-title {
+  color: #fff;
+  margin-bottom: 32px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.auth-form .ant-input,
+.auth-form .ant-input-password {
+  background: #14532d;
+  border: 1.5px solid #19c37d;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.auth-form .ant-input::placeholder,
+.auth-form .ant-input-password input::placeholder {
+  color: #b7e4c7;
+  opacity: 1;
+}
+
+.auth-form .ant-btn {
+  background: linear-gradient(145deg, #19c37d 80%, #236e4a 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.auth-form .ant-btn:hover, .auth-form .ant-btn:focus {
+  background: linear-gradient(145deg, #236e4a 80%, #19c37d 100%);
+  color: #fff;
+}
+
+.auth-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #b7e4c7;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.98rem;
+}
+
+.auth-link:hover {
+  color: #19c37d;
+}
+
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 22px 8px;
+  }
+}
